@@ -2,5 +2,10 @@
     "files.associations": {
         "*.spec": "gauge",
         "*.cpt": "gauge"
-    }
+    },
+    "cSpell.words": [
+        "Timedout",
+        "promisified",
+        "promisify"
+    ]
 }

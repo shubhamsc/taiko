@@ -44,3 +44,21 @@ jobs:
       - name: examples
         run: |
           npm run examples
+
+  functional-tests-headful:
+    needs: unit-tests
+    name: FT in linux-headful
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use NodeJS 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install xvfb
+        run: sudo apt install xvfb
+      - name: functional-tests-headful
+        env:
+          headless: false
+        run: xvfb-run npm run test-functional
+
